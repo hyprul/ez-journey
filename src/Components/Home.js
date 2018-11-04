@@ -80,25 +80,26 @@ class Home extends Component {
 
 					<br />
 					<br />
-					<Button
+					<button
 						onClick={this.quiz}
-						bsSize="large"
+
+						className="buttonQuiz"
 					>
-						Take the quiz
-					</Button>
+						Take the quiz!
+					</button>
 				</div>
 
 				<div id="bootstrap-overrides" className="form">
 					<form
 						style={{
 							backgroundColor: "#fff",
-							borderRadius: 20,
 							width: "550px",
-							height: "350px"
+							height: "330px",
+
 						}}
 					>
-						<h2>Enter a Location</h2>
-						<FormGroup bsSize="large">
+						<h2>Enter a location</h2>
+						<div><FormGroup bsSize="large">
 							<LocationSearchInput
 								placeholder={"Where from?"}
 								type="start"
@@ -106,7 +107,7 @@ class Home extends Component {
 							/>
 							<LocationSearchInput placeholder={"Where to?"} type="end" handleEnd={this.props.handleEnd} setDestination={this.props.setDestination}/>
 							{/*<FormControl type="text" placeholder="Where from?" style={{color:"black"}}/>*/}
-						</FormGroup>
+						</FormGroup></div>
 						<FormGroup bsSize="large">
 							{/*<FormControl
 								type="text"
@@ -114,14 +115,13 @@ class Home extends Component {
 								style={{color:"black"}}
 							/>*/}
 						</FormGroup>
-						<Button
+						<button
 							onClick={this.journey}
-							bsStyle="success"
-							bsSize="large"
+							className="buttonSearch"
 							style={{ margin: 10 }}
 						>
 							Search
-						</Button>
+						</button>
 					</form>
 				</div>
 			</div>

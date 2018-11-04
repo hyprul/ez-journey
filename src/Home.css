@@ -5,7 +5,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: 700;
-  line-height: 39.6px;
+  line-height: 35px;
 }
 
 #bootstrap-overrides h3 {
@@ -48,10 +48,28 @@ color: black;
 .form {
   position: absolute;
   top: 20%;
-  left: 60%;
-  background-color: "white",
+  left: 55%;
+  background-color: "white";
 }
 
+.buttonQuiz {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-family: "Open Sans";
+  padding: 2%;
+  width: 40%;
+}
+
+.buttonSearch {
+  background-color: #ffa300;
+  color: white;
+  font-size: 18px;
+  font-family: "Open Sans";
+  padding: 2%;
+  width: 40%;
+  border: 0px;
+}
 /* .Quiz{
   background-color: transparent;
 } */
