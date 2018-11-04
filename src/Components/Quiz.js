@@ -22,7 +22,7 @@ export default class Quiz extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-			form:null
+			suggestions:null
     };
   }
 
@@ -35,7 +35,13 @@ export default class Quiz extends Component {
 	handleSubmit = (e) =>{
 		e.preventDefault();
 		const suggestions = this.suggestPlaces(this.state.climate, this.state.environment, this.state.pace)
-		this.setState({form:done})
+		this.setState({suggestions:suggestions})
+	}
+
+	mapSuggestions =() =>{
+		return(
+			this.state.suggestions.map( suggest => <Col md={8} xs={10} mdOffset={2}  xsOffset={1} className="user-info "><div className="col-md-12 margin-bottom"><h3>{suggest}</h3></div></Col>)
+		)
 	}
 
 	suggestPlaces= (climate, environment, pace) => {
@@ -73,7 +79,7 @@ export default class Quiz extends Component {
 		return (
 			<Grid style={backgroundStyle}>
 			            <Row className="show-grid center">
-			              <Col md={8} xs={10} mdOffset={2}  xsOffset={1} className="user-info ">
+			              {!this.state.suggestions?<Col md={8} xs={10} mdOffset={2}  xsOffset={1} className="user-info ">
 			                <div className="col-md-12 margin-bottom"><h3>Journey Matcher</h3></div>
 			                <form onSubmit={e=>this.handleSubmit(e)}>
 			                  <FormGroup className="col-md-12">
@@ -95,7 +101,7 @@ export default class Quiz extends Component {
 			                    <Button bsStyle="primary" bsSize="large" type="submit">Submit</Button>
 			                  </FormGroup>
 			                </form>
-			              </Col>
+			              </Col>: this.mapSuggestions()}
 			            </Row>
 			          </Grid>
 		);
