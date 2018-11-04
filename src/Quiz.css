@@ -1,0 +1,21 @@
+.user-info{
+  background: rgba(34,34,34,0.60);
+  color: white;
+  margin-top: 20px;
+  padding-bottom: 20px
+}
+
+.push-right{
+  margin-right: 15px;
+}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.center{
+  height: 75%;
+  vertical-align: middle;
+}
