@@ -35,7 +35,7 @@ export default class Quiz extends Component {
 	handleSubmit = (e) =>{
 		e.preventDefault();
 		const suggestions = this.suggestPlaces(this.state.climate, this.state.environment, this.state.pace)
-		this.setState({form:done})
+		this.setState({form:"done"})
 	}
 
 	suggestPlaces= (climate, environment, pace) => {

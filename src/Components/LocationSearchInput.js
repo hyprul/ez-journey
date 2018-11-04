@@ -15,6 +15,9 @@ export default class LocationSearchInput extends React.Component {
     if(this.props.type === "end"){
       this.props.setDestination(address)
     }
+    if(this.props.type === "start"){
+      this.props.setOrigin(address)
+    }
   };
  
   handleSelect = address => {
@@ -22,7 +25,7 @@ export default class LocationSearchInput extends React.Component {
       .then(results => getLatLng(results[0]))
       .then(latLng => this.props.type === "start" ? this.props.handleStart(latLng) : this.props.handleEnd(latLng))
       .then(this.setState({address}))
-      .then(this.props.type === "end" ? this.props.setDestination(address) : null)
+      .then(this.props.type === "end" ? this.props.setDestination(address) : this.props.setOrigin(address))
       .catch(error => console.error('Error', error));
   };
 

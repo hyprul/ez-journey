@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 
-
 import {
 	Jumbotron,
 	Media,
@@ -26,8 +25,6 @@ var backgroundStyle = {
 };
 
 class Home extends Component {
-
-
 	// handleStart = latlng => {
 	// 	this.setState({ starting: latlng });
 	// 	console.log(this.state)
@@ -39,14 +36,15 @@ class Home extends Component {
 	// };
 
 	journey = e => {
-		e.preventDefault()
+		e.preventDefault();
 		this.props.history.push("/journey");
+
 	};
 
 	quiz = e => {
-		e.preventDefault()
-		this.props.history.push("/quiz")
-	}
+		e.preventDefault();
+		this.props.history.push("/quiz");
+	};
 
 	render() {
 		return (
@@ -104,8 +102,14 @@ class Home extends Component {
 								placeholder={"Where from?"}
 								type="start"
 								handleStart={this.props.handleStart}
+								setOrigin={this.props.setOrigin}
 							/>
-							<LocationSearchInput placeholder={"Where to?"} type="end" handleEnd={this.props.handleEnd} setDestination={this.props.setDestination}/>
+							<LocationSearchInput
+								placeholder={"Where to?"}
+								type="end"
+								handleEnd={this.props.handleEnd}
+								setDestination={this.props.setDestination}
+							/>
 							{/*<FormControl type="text" placeholder="Where from?" style={{color:"black"}}/>*/}
 						</FormGroup></div>
 						<FormGroup bsSize="large">
