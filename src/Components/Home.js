@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 import { Parallax } from "react-materialize";
 import { NavLink } from "react-router-dom";
-import { Jumbotron, Media, Button, FormGroup, FormControl } from "react-bootstrap";
+
+
+import {
+	Jumbotron,
+	Media,
+	Button,
+	FormGroup,
+	FormControl
+} from "react-bootstrap";
 
 import "../Home.css";
 
 import Background from "../backgroundImages/beach.jpg";
+
+import LocationSearchInput from "./LocationSearchInput";
 
 var backgroundStyle = {
 	width: "100%",
@@ -16,8 +26,31 @@ var backgroundStyle = {
 };
 
 class Home extends Component {
+
+
+	// handleStart = latlng => {
+	// 	this.setState({ starting: latlng });
+	// 	console.log(this.state)
+	// };
+
+	// handleEnd = latlng => {
+	// 	this.setState({ ending: latlng });
+	// 	console.log(this.state)
+	// };
+
+	journey = e => {
+		e.preventDefault()
+		this.props.history.push("/journey");
+	};
+
+	quiz = e => {
+		e.preventDefault()
+		this.props.history.push("/quiz")
+	}
+
 	render() {
 		return (
+		
 			<div style={backgroundStyle}>
 				<Media.Heading>
 					<img
@@ -48,30 +81,56 @@ class Home extends Component {
 
 					<br />
 					<br />
-					<Button bsSize="large" bsStyle="info" style={{borderRadius: 10}}>Take The Quiz</Button>
+					<Button
+						onClick={this.quiz}
+						bsSize="large"
+						bsStyle="info"
+						style={{ borderRadius: 10 }}
+					>
+						Take The Quiz
+					</Button>
 				</div>
 
 				<div id="bootstrap-overrides" className="form">
-					<form style={{backgroundColor: '#fff', borderRadius: 20, width:"550px", height:"350px"}}>
+					<form
+						style={{
+							backgroundColor: "#fff",
+							borderRadius: 20,
+							width: "550px",
+							height: "350px"
+						}}
+					>
 						<h2>Enter a Location</h2>
 						<FormGroup bsSize="large">
-							<FormControl type="text" placeholder="Where from?" style={{color:"black"}}/>
+							<LocationSearchInput
+								placeholder={"Where from?"}
+								type="start"
+								handleStart={this.props.handleStart}
+							/>
+							<LocationSearchInput placeholder={"Where to?"} type="end" handleEnd={this.props.handleEnd} setDestination={this.props.setDestination}/>
+							{/*<FormControl type="text" placeholder="Where from?" style={{color:"black"}}/>*/}
 						</FormGroup>
 						<FormGroup bsSize="large">
-							<FormControl
+							{/*<FormControl
 								type="text"
 								placeholder="Where to?"
 								style={{color:"black"}}
-							/>
+							/>*/}
 						</FormGroup>
-						  <Button bsStyle="success" bsSize="large" style={{margin: 10}}>Search</Button>
+						<Button
+							onClick={this.journey}
+							bsStyle="success"
+							bsSize="large"
+							style={{ margin: 10 }}
+						>
+							Search
+						</Button>
 					</form>
 				</div>
 			</div>
+		
 		);
 	}
 }
-
-
 
 export default Home;

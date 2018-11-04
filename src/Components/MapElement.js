@@ -1,5 +1,7 @@
+/*global google*/
+
 import React, { Component } from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Polyline } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Polyline, Marker } from "react-google-maps";
 
 const MapElement = withScriptjs(withGoogleMap((props) =>{
    const MapStyles = [
@@ -176,24 +178,50 @@ const MapElement = withScriptjs(withGoogleMap((props) =>{
     }
 ]
 	const pathCoordinates = [
-        { lat: 36.05298765935, lng: -112.083756616339 },
-        { lat: 36.2169884797185, lng: -112.056727493181 }
+        props.starting,
+        props.ending
     ];
+    var lineSymbol = {
+  path: 'M 0,-1 0,1',
+  strokeOpacity: 1,
+  scale: 4
+};
+	var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+	const icon = {url: require("../icons/plane.png"), scaledSize: { width: 32, height: 32 }}
+	
   return (
       <GoogleMap
         defaultZoom={10}
-        center={ { lat:  36.05298765935, lng: -112.083756616339 } }
+        center={ props.starting }
 
         defaultOptions={{ styles: MapStyles }}
-        >
+        >	
+
+        <Marker
+
+      position={props.starting}
+      icon={icon}
+       defaultAnimation={google.maps.Animation.BOUNCE}
+
+    />
+            <Marker
+      position={props.ending}
+      icon={icon}
+       defaultAnimation={google.maps.Animation.BOUNCE}
+			
+    />
                     <Polyline
                 path={pathCoordinates}
                 geodesic={true}
                 options={{
                     strokeColor: "#ffa300",
-                    strokeOpacity: 0.75,
+                    strokeOpacity: 0,
                     strokeWeight: 5,
-                    
+                    icons: [{
+    icon: lineSymbol,
+    offset: '0',
+    repeat: '20px'
+  }]
                 }}
             />
       </GoogleMap>
