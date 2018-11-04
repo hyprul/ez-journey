@@ -9,7 +9,7 @@ position: absolute;
 
 #bootstrap-journey h1 {
 	padding-top: 30px;
-margin: 30px;
+  margin: 30px;
   color: black;
   font-family: "Open Sans";
   font-size: 36px;
@@ -23,20 +23,23 @@ margin: 30px;
 .myTabs ul > li > a {
     background-color: transparent;
     border-radius: 5px;
+
     font-family: "Open Sans";
-    color: black;
+    color: #ffa300;
     font-size: 20px;
 }
 .myTabs ul > li > a:hover {
-    background-color: transparent;
+    background-color: #ffa300;
+    color:white
+
 }
 
 /* Active tab */
 .myTabs ul > li.active > a,
 .myTabs ul > li.active > a:hover,
 .myTabs ul > li.active > a:focus {
-    background-color: transparent;
-    color: orange;
+    background-color: #ffa300;
+    color: white;
 }
 
 /* Disabled tab */

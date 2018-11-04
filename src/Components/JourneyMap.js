@@ -26,7 +26,7 @@ export default class JourneyMap extends Component {
 				</Media.Heading>
 				<div align="center">
 					<MapElement
-						googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDcZEKmvQop1c53ABk5fDynJGURTxRfXJg&v=3.exp&libraries=geometry,drawing,places`}
+						googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAI3-3TxYKBG7mGe4w6OovA2hvmthCse5s&v=3.exp&libraries=geometry,drawing,places`}
 						loadingElement={<div style={{ height: `100%` }} />}
 						containerElement={
 							<div style={{ height: `100vh`, width: `100%` }} />
@@ -37,7 +37,7 @@ export default class JourneyMap extends Component {
 					/>
 				</div>
 				<div id="bootstrap-journey" className="journeyform" >
-					<form style={{backgroundColor: '#e4e4e4', borderRadius: 10, width:"1300px", height:"650px"}}>
+					<div style={{backgroundColor: '#f2f2f2', borderRadius: 10, width:"1300px", height:"650px"}}>
 						<h1>{this.props.destination}</h1>
 						<Tabs className="myTabs" defaultActiveKey={1} id="uncontrolled-tab-example">
 						  <Tab eventKey={1} title="In the next week">
@@ -50,7 +50,7 @@ export default class JourneyMap extends Component {
 						    Tab 3 content
 						  </Tab>
 						</Tabs>
-					</form>
+					</div>
 
 				</div>
 			</div>

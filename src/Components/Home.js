@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Parallax } from "react-materialize";
 import { NavLink } from "react-router-dom";
+
 
 
 import {
@@ -50,7 +50,7 @@ class Home extends Component {
 
 	render() {
 		return (
-		
+
 			<div style={backgroundStyle}>
 				<Media.Heading>
 					<img
@@ -75,8 +75,7 @@ class Home extends Component {
 					<h1>Search our cheapest flights.</h1>
 					<h1>Simple, efficient, easy.</h1>
 					<h3>
-						Or let us match you to a destination based on your
-						preferences
+						Can't decide where to roam? We've got you covered.
 					</h3>
 
 					<br />
@@ -84,10 +83,8 @@ class Home extends Component {
 					<Button
 						onClick={this.quiz}
 						bsSize="large"
-						bsStyle="info"
-						style={{ borderRadius: 10 }}
 					>
-						Take The Quiz
+						Take the quiz
 					</Button>
 				</div>
 
@@ -128,7 +125,7 @@ class Home extends Component {
 					</form>
 				</div>
 			</div>
-		
+
 		);
 	}
 }
