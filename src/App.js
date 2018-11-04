@@ -12,7 +12,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      destination:"Valhalla",
+      allFlights: {},
+      origin: "Houston, TX, USA",
+      destination:"Los Angeles, CA, USA",
       starting: { lat: 36.05298765935, lng: -112.083756616339 },
       ending: { lat: 36.2169884797185, lng: -112.056727493181 }
     };
@@ -24,10 +26,20 @@ class App extends Component {
   };
 
 
-  setDestination = address => {
-    this.setState({destination: address})
+  setFlights = data => {
+    this.setState({ allFlights: data})
+    console.log(this.state)
   }
 
+
+  setDestination = address => {
+    this.setState({destination: address})
+    console.log(this.state)
+  }
+
+  setOrigin = address => {
+    this.setState({origin: address})
+  }
 
   handleEnd = latlng => {
     this.setState({ ending: latlng });
@@ -39,8 +51,8 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <React.Fragment>
-            <Route exact path="/" render={(props) => <Home {...props} journey={this.journey} handleEnd={this.handleEnd} handleStart={this.handleStart} setDestination={this.setDestination}/>} />
-            <Route exact path="/journey" render={(props) => <JourneyMap {...props} destination={this.state.destination} starting={this.state.starting} ending={this.state.ending}/>} />
+            <Route exact path="/" render={(props) => <Home {...props} journey={this.journey} setFlights={this.setFlights} handleEnd={this.handleEnd} handleStart={this.handleStart} setDestination={this.setDestination} setOrigin={this.setOrigin}/>} />
+            <Route exact path="/journey" render={(props) => <JourneyMap {...props} allFlights={this.state.allFlights} setFlights={this.setFlights} origin={this.state.origin} destination={this.state.destination} starting={this.state.starting} ending={this.state.ending}/>} />
             <Route exact path="/quiz" render={(props) => <Quiz {...props}/>} />
           </React.Fragment>
         </BrowserRouter>
