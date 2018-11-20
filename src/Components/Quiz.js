@@ -95,7 +95,7 @@ export default class Quiz extends Component {
 			                  <FormGroup className="col-md-12">
 			                    <ControlLabel className="push-right">What is your ideal vacation scenario? </ControlLabel>
 			                    <Radio inline name="pace" value="on the go" required onChange={e=>this.handleChanges(e)}>Sightseeing</Radio>
-			                    <Radio inline name="pace" value="relaxing" onChange={e=>this.handleChanges(e)}>Relazing</Radio>
+			                    <Radio inline name="pace" value="relaxing" onChange={e=>this.handleChanges(e)}>Relaxing</Radio>
 			                  </FormGroup>
 			                  <FormGroup className="col-md-6">
 			                    <Button bsStyle="primary" bsSize="large" type="submit">Submit</Button>

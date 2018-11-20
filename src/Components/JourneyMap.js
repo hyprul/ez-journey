@@ -105,7 +105,7 @@ export default class JourneyMap extends Component {
 								
 												<th>Airline</th>
 												<th>Direct</th>
-												<th>Departure Date</th>
+												<th>Departure Date (YYYY/MM/DD)</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -162,7 +162,7 @@ export default class JourneyMap extends Component {
 								
 												<th>Airline</th>
 												<th>Direct</th>
-												<th>Departure Date</th>
+												<th>Departure Date (YYYY/MM/DD)</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -218,7 +218,7 @@ export default class JourneyMap extends Component {
 								
 												<th>Airline</th>
 												<th>Direct</th>
-												<th>Departure Date</th>
+												<th>Departure Date (YYYY/MM/DD)</th>
 											</tr>
 										</thead>
 										<tbody>

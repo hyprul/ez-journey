@@ -3,6 +3,8 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+
+const temp = "temp";
  
 export default class LocationSearchInput extends React.Component {
   constructor(props) {
